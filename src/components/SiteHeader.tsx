@@ -36,18 +36,12 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-3 group">
-          <span className="grid h-11 w-11 place-items-center rounded-full border border-copper/30 bg-ivory text-copper transition-transform group-hover:rotate-12">
-            <LotusMark className="h-6 w-6" />
-          </span>
-          <span className="leading-tight">
-            <span className="block font-serif text-lg font-semibold tracking-tight text-brown">
-              Rudhra
-            </span>
-            <span className="block text-[10px] uppercase tracking-[0.22em] text-copper">
-              Homoeopathy Clinic
-            </span>
-          </span>
+        <Link to="/" className="flex items-center gap-2 group py-1">
+          <img
+            src="/logo.png"
+            alt="Rudhra Homoeopathy Clinic Logo"
+            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </Link>
 
         <nav className="hidden xl:flex items-center gap-7">

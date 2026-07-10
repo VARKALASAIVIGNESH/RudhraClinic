@@ -8,8 +8,10 @@ export const clinic = {
   instagram: "@rudhrahomoeoclinicshadnagar",
   instagramUrl: "https://instagram.com/rudhrahomoeoclinicshadnagar",
   hours: "10AM–2PM & 4PM–7:30PM",
-  // TODO: replace with the clinic's actual WhatsApp number (country code, no +, no spaces)
-  whatsappNumber: "919999999999",
+  whatsappNumber: "917995318298",
+  phone: "7995318298",
+  phoneDisplay: "+91 79953 18298",
+  googleMapsUrl: "https://maps.app.goo.gl/HAURXdssDM6JKWc56",
 };
 
 export function whatsappLink(message: string): string {

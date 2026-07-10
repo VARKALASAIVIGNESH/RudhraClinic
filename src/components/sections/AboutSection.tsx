@@ -25,11 +25,6 @@ export function AboutSection() {
               className="aspect-[4/5] w-full object-cover"
             />
           </div>
-          <div className="absolute -right-4 bottom-6 hidden glass-card rounded-2xl px-5 py-4 shadow-soft md:block">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-copper">Founder</p>
-            <p className="font-serif text-xl text-brown">Dr. Soundarya</p>
-            <p className="text-xs text-muted-foreground">B.H.M.S | D.Y.T</p>
-          </div>
         </div>
 
         <div>

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
-import { LotusMark } from "./LotusMark";
+import { Instagram, Mail, MapPin, Clock, MessageCircle, Phone } from "lucide-react";
+
 import { clinic, whatsappLink, defaultWhatsAppMessage } from "@/lib/clinic";
 
 const cols = [
@@ -29,16 +29,12 @@ export function SiteFooter() {
     <footer className="relative mt-24 border-t border-copper/20 bg-gradient-warm lotus-bg">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-1">
-          <Link to="/" className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center rounded-full border border-copper/40 bg-ivory text-copper">
-              <LotusMark className="h-7 w-7" />
-            </span>
-            <span>
-              <span className="block font-serif text-xl font-semibold text-brown">Rudhra</span>
-              <span className="block text-[10px] uppercase tracking-[0.22em] text-copper">
-                Homoeopathy Clinic
-              </span>
-            </span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img
+              src="/logo.png"
+              alt="Rudhra Homoeopathy Clinic Logo"
+              className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
             {clinic.tagline}
@@ -73,6 +69,12 @@ export function SiteFooter() {
             <li className="flex gap-3">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-copper" />
               <span>{clinic.hours}</span>
+            </li>
+            <li className="flex gap-3">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-copper" />
+              <a href={`tel:${clinic.phone}`} className="hover:text-copper transition-colors">
+                {clinic.phoneDisplay}
+              </a>
             </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-copper" />

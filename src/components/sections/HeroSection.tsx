@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-wellness.jpg";
 import { whatsappLink, defaultWhatsAppMessage } from "@/lib/clinic";
-import { LotusMark } from "@/components/LotusMark";
 
 export function HeroSection() {
   return (
@@ -77,8 +76,8 @@ export function HeroSection() {
             />
           </div>
           <div className="absolute -bottom-6 -left-6 hidden glass-card rounded-2xl p-4 shadow-soft md:flex items-center gap-3 animate-float">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-copper/10 text-copper">
-              <LotusMark className="h-6 w-6" />
+            <span className="grid h-10 w-10 overflow-hidden rounded-full border border-copper/30 bg-ivory">
+              <img src="/logo.png" alt="Clinic Logo" className="h-full w-full object-cover scale-110" />
             </span>
             <div>
               <p className="font-serif text-sm text-brown">Constitutional Treatment</p>

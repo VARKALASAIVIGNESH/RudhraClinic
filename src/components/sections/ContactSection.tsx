@@ -18,7 +18,12 @@ export function ContactSection() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
-            <Card icon={MapPin} title="Location" lines={[clinic.address]} />
+            <Card
+              icon={MapPin}
+              title="Location"
+              lines={[clinic.address]}
+              href={clinic.googleMapsUrl}
+            />
             <Card icon={Clock} title="Clinic Hours" lines={[clinic.hours]} />
             <Card
               icon={Mail}
@@ -31,6 +36,12 @@ export function ContactSection() {
               title="Instagram"
               lines={[clinic.instagram]}
               href={clinic.instagramUrl}
+            />
+            <Card
+              icon={Phone}
+              title="Phone Call"
+              lines={[clinic.phoneDisplay]}
+              href={`tel:${clinic.phone}`}
             />
             <a
               href={whatsappLink(defaultWhatsAppMessage)}
@@ -54,7 +65,7 @@ export function ContactSection() {
           <div className="overflow-hidden rounded-[2rem] border border-copper/20 shadow-elegant">
             <iframe
               title="Rudhra Homoeopathy Clinic location"
-              src="https://www.google.com/maps?q=Shadnagar+509216&output=embed"
+              src="https://www.google.com/maps?q=RUDHRA+HOMOEOPATHY+CLINIC+SHADNAGAR&output=embed"
               width="100%"
               height="100%"
               loading="lazy"
