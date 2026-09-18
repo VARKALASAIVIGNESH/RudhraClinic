@@ -1,90 +1,115 @@
+import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-wellness.jpg";
-import { whatsappLink, defaultWhatsAppMessage } from "@/lib/clinic";
+import { ArrowRight, MessageCircle, CalendarClock } from "lucide-react";
+import clinic1 from "@/assets/hero-slides/clinic-1.jpg";
+import clinic2 from "@/assets/hero-slides/clinic-2.jpg";
+import clinic3 from "@/assets/hero-slides/clinic-3.jpg";
+import clinic4 from "@/assets/hero-slides/clinic-4.jpg";
+import clinic5 from "@/assets/hero-slides/clinic-5.jpg";
+import { clinic, whatsappLink, defaultWhatsAppMessage } from "@/lib/clinic";
+
+const heroSlides = [
+  { img: clinic1, caption: "Pure Homoeopathic Globules & Dilutions" },
+  { img: clinic2, caption: "Classical Homoeopathic Dispensary" },
+  { img: clinic3, caption: "Botanical Mother Tinctures & Globuli" },
+  { img: clinic4, caption: "Individualized Constitutional Consultation" },
+  { img: clinic5, caption: "Potentized Remedy Preparation" },
+];
 
 export function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Smooth auto-fade every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden lotus-bg">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-20 pt-12 lg:grid-cols-2 lg:px-8 lg:pb-28 lg:pt-20">
-        <div className="relative z-10 animate-fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-copper/30 bg-ivory/60 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-copper">
-            <Sparkles className="h-3.5 w-3.5" />
-            Holistic Wellness Since Day One
-          </span>
-
-          <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-brown text-balance md:text-6xl lg:text-7xl">
-            Rudhra
-            <span className="block bg-gradient-to-r from-copper to-brown bg-clip-text text-transparent">
-              Homoeopathy Clinic
-            </span>
-          </h1>
-
-          <p className="mt-6 max-w-xl font-serif text-2xl italic text-olive md:text-3xl">
-            Personalised Healing Through Homoeopathy, Yoga &amp; Diet.
-          </p>
-
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Individualised, holistic and constitutional treatment for acute and chronic
-            illnesses — guided by <span className="text-brown font-medium">Dr. Soundarya, B.H.M.S, D.Y.T</span>.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              to="/appointment"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-copper px-7 py-3.5 text-sm font-medium text-ivory shadow-glow transition-transform hover:-translate-y-0.5"
-            >
-              Book Appointment
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a
-              href={whatsappLink(defaultWhatsAppMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-olive/40 bg-ivory/70 px-7 py-3.5 text-sm font-medium text-olive backdrop-blur transition-colors hover:bg-olive hover:text-ivory"
-            >
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp Consultation
-            </a>
-          </div>
-
-          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-copper/15 pt-6">
-            {[
-              { k: "10+", v: "Years of Care" },
-              { k: "5k+", v: "Patients Healed" },
-              { k: "12+", v: "Conditions" },
-            ].map((s) => (
-              <div key={s.v}>
-                <dt className="font-serif text-3xl text-copper">{s.k}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-                  {s.v}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-warm blur-2xl opacity-70" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-copper/20 shadow-elegant">
+    <section className="relative min-h-[calc(100vh-68px)] sm:min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden">
+      {/* ─── 5 Real Images Smoothly Cross-Fading in Background ─── */}
+      <div className="absolute inset-0 z-0">
+        {heroSlides.map((slide, idx) => (
+          <div
+            key={slide.caption}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+            }`}
+          >
             <img
-              src={heroImage}
-              alt="Soft botanical wellness composition with lotus motifs in copper and olive tones"
-              width={1536}
-              height={1024}
-              className="h-full w-full object-cover"
+              src={slide.img}
+              alt={slide.caption}
+              className={`h-full w-full object-cover object-center transition-transform duration-[6000ms] ease-out ${
+                idx === currentSlide ? "scale-105" : "scale-100"
+              }`}
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 hidden glass-card rounded-2xl p-4 shadow-soft md:flex items-center gap-3 animate-float">
-            <span className="grid h-10 w-10 overflow-hidden rounded-full border border-copper/30 bg-ivory">
-              <img src="/logo.png" alt="Clinic Logo" className="h-full w-full object-cover scale-110" />
-            </span>
-            <div>
-              <p className="font-serif text-sm text-brown">Constitutional Treatment</p>
-              <p className="text-[11px] text-muted-foreground">Gentle · Safe · Lasting</p>
-            </div>
-          </div>
+        ))}
+
+        {/* Lightened, subtle overlay so real background photos are bright and clearly visible */}
+        <div className="absolute inset-0 z-20 bg-stone-950/35" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-stone-950/70 via-transparent to-stone-950/25" />
+      </div>
+
+      {/* ─── Ultra-Clean, Minimal, Authentic Hero Content ─── */}
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 w-full relative z-30 py-10 sm:py-14 text-center my-auto">
+
+        {/* Minimal clinic badge */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-copper/30 bg-copper/15 px-4 py-1.5 text-xs font-semibold tracking-widest text-amber-300 uppercase mb-6 backdrop-blur-md shadow-md">
+          <span>Rudhra Homoeopathy Clinic · Shadnagar</span>
         </div>
+
+        {/* Clean, powerful headline */}
+        <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+          Root-Cause Healing. <br />
+          <span className="gradient-text-copper drop-shadow-md">Pure &amp; Personalised.</span>
+        </h1>
+
+        {/* Single authentic sentence — No clutter */}
+        <p className="mt-5 text-base sm:text-xl text-stone-100 font-normal leading-relaxed max-w-2xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          Classical constitutional homoeopathy, therapeutic yoga, and tailored clinical nutrition.
+        </p>
+
+        {/* Two clean, prominent action buttons */}
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/appointment"
+            className="btn-primary text-sm sm:text-base font-bold py-3.5 px-8 shadow-glow"
+          >
+            <CalendarClock className="h-4 w-4" />
+            Book Consultation
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <a
+            href={whatsappLink(defaultWhatsAppMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md hover:bg-white/20 transition-all active:scale-95 shadow-soft"
+          >
+            <MessageCircle className="h-4 w-4 text-emerald-400" />
+            WhatsApp Clinic
+          </a>
+        </div>
+
+        {/* Slide navigation dots */}
+        <div className="mt-12 flex items-center justify-center gap-2.5">
+          {heroSlides.map((s, i) => (
+            <button
+              key={s.caption}
+              onClick={() => setCurrentSlide(i)}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                i === currentSlide ? "w-8 bg-copper" : "w-2 bg-white/30 hover:bg-white/60"
+              }`}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+          <span className="text-xs text-amber-200/80 ml-2 font-medium tracking-wide">
+            {heroSlides[currentSlide].caption}
+          </span>
+        </div>
+
       </div>
     </section>
   );

@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    q: "What is Homoeopathy?",
-    a: "Homoeopathy is a 200+ year old system of medicine based on the principle of 'like cures like.' It uses highly diluted natural substances to stimulate the body's own healing response, treating the whole person — not just isolated symptoms.",
+    q: "How does Classical Homoeopathy differ from conventional medicine?",
+    a: "Conventional medicine primarily suppresses isolated symptoms using pharmaceuticals like antihistamines, pain-blockers, or steroid inhalers. Classical Homoeopathy evaluates your full constitutional totality — biological history, mental state, and physical sensitivities — stimulating your innate vital response to cure the root disease permanently without drug dependence.",
   },
   {
-    q: "Is Homoeopathy safe?",
-    a: "Yes. Homoeopathic remedies are non-toxic, non-addictive and safe for infants, pregnant women, the elderly and those on conventional medication. They work gently without side effects when prescribed by a qualified physician.",
+    q: "Are homoeopathic medicines safe alongside my ongoing prescriptions?",
+    a: "Yes. Classical homoeopathic dilutions are micro-dosed, non-toxic, and do not chemically interfere with conventional allopathic medications like thyroid pills, insulin, or blood pressure drugs. Dr. Soundarya coordinates your treatment plan safely so you never abruptly stop critical prescribed medicines.",
   },
   {
-    q: "How long does treatment take?",
-    a: "Acute conditions often respond within days. Chronic illnesses typically need a few months of consistent treatment — depending on duration, severity and individual response. Dr. Soundarya will share realistic timelines during your consultation.",
+    q: "How soon can I expect measurable improvements in chronic conditions?",
+    a: "Acute flare-ups (colds, acute sinus headaches, minor skin flare) often show notable relief within 24 to 72 hours. For chronic deep-seated complaints like PCOD, asthma, or long-standing arthritis, marked clinical improvement typically occurs within 4 to 12 weeks of constitutional therapy.",
   },
   {
-    q: "Can chronic illnesses be managed?",
-    a: "Absolutely. PCOD, thyroid, arthritis, asthma, skin and many other chronic conditions respond very well to constitutional homoeopathy combined with the yoga and diet protocols we prescribe.",
+    q: "Why are Yoga Therapy and Diet included in every protocol?",
+    a: "Health is multidimensional. While constitutional remedies correct cellular vitality, targeted Yoga asanas enhance endocrine and organ micro-circulation, Pranayama soothes autonomic hyper-reactivity, and anti-inflammatory nutrition removes metabolic toxins. The triad ensures rapid and lasting recovery.",
   },
   {
-    q: "Do you provide online consultations?",
-    a: "Yes — we offer secure online consultations for patients across India and abroad. After your case is taken, remedies and personalised protocols are couriered or shared digitally.",
+    q: "How do Online Consultations work for distant or international patients?",
+    a: "Virtual consultations are conducted via high-definition video call (Google Meet or WhatsApp Video). Dr. Soundarya conducts an in-depth 45-minute case-taking session. Your customized, sealed homoeopathic remedies and detailed yoga/diet guides are then dispatched via courier directly to your doorstep with tracking.",
   },
 ];
 
@@ -28,13 +28,19 @@ export function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative py-20 lg:py-28">
-      <div className="mx-auto max-w-4xl px-5 lg:px-8">
+    <section id="faq" className="relative py-16 lg:py-20 overflow-hidden">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="ornament-divider text-[10px] uppercase tracking-[0.3em]">FAQ</p>
-          <h2 className="mt-4 font-serif text-4xl text-brown md:text-5xl">
-            Questions, gently answered
+          <div className="inline-flex items-center gap-2 rounded-full border border-copper/20 bg-copper/5 px-3.5 py-1 text-xs font-semibold tracking-wide text-copper">
+            <HelpCircle className="h-3.5 w-3.5" />
+            <span>Patient Guidance</span>
+          </div>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+            Frequently Asked Questions
           </h2>
+          <p className="mt-3 text-base text-muted-foreground">
+            Clear, transparent medical information regarding treatment timelines, safety, and consultations.
+          </p>
         </div>
 
         <div className="mt-12 space-y-3">
@@ -43,8 +49,8 @@ export function FAQSection() {
             return (
               <div
                 key={f.q}
-                className={`rounded-2xl border bg-card transition-all ${
-                  isOpen ? "border-copper/40 shadow-soft" : "border-border"
+                className={`modern-card rounded-2xl transition-all ${
+                  isOpen ? "border-copper/40 shadow-soft" : "border-border/70"
                 }`}
               >
                 <button
@@ -52,8 +58,12 @@ export function FAQSection() {
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-serif text-lg text-brown md:text-xl">{f.q}</span>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-copper/10 text-copper">
+                  <span className="font-display text-base sm:text-lg font-bold text-foreground">
+                    {f.q}
+                  </span>
+                  <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition-colors ${
+                    isOpen ? "bg-copper text-ivory" : "bg-muted text-muted-foreground"
+                  }`}>
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>

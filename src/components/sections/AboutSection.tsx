@@ -1,68 +1,144 @@
 import { Link } from "@tanstack/react-router";
-import { Award, Leaf, HeartHandshake, Stethoscope, ArrowUpRight } from "lucide-react";
-import doctorImage from "@/assets/doctor-portrait.jpg";
-
-const pillars = [
-  { icon: Stethoscope, title: "Homeopathy", text: "Constitutional remedies tailored to you." },
-  { icon: Leaf, title: "Yoga Guidance", text: "Movement & breath for body-mind balance." },
-  { icon: HeartHandshake, title: "Diet Support", text: "Personalised nutrition that heals." },
-  { icon: Award, title: "Patient-Centered", text: "Care that listens before it treats." },
-];
+import {
+  ArrowRight,
+  ShieldCheck,
+  MessageCircle,
+  CalendarClock,
+} from "lucide-react";
+import doctorPortrait from "@/assets/doctor-portrait.jpg";
+import { clinic, whatsappLink, defaultWhatsAppMessage } from "@/lib/clinic";
 
 export function AboutSection() {
   return (
-    <section className="relative py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:px-8">
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-copper/15 to-olive/15 blur-xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-copper/20 shadow-elegant">
-            <img
-              src={doctorImage}
-              alt="Dr. Soundarya, B.H.M.S, D.Y.T — founder of Rudhra Homoeopathy Clinic"
-              width={896}
-              height={1152}
-              loading="lazy"
-              className="aspect-[4/5] w-full object-cover"
+    <section id="about" className="relative py-14 sm:py-16 lg:py-20 overflow-hidden">
+      {/* Background ambient accents */}
+      <div
+        className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 80% 20%, oklch(0.585 0.118 52 / 0.08) 0%, transparent 65%)",
+          filter: "blur(60px)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 20% 80%, oklch(0.52 0.06 115 / 0.07) 0%, transparent 65%)",
+          filter: "blur(60px)",
+        }}
+      />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+
+          {/* ─── LEFT: Image of Doctor Soundarya with overlapping badge ─── */}
+          <div className="lg:col-span-5 relative animate-slide-right">
+            {/* Soft ambient glow behind image */}
+            <div
+              className="absolute -inset-4 rounded-[2.5rem] pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse at center, oklch(0.585 0.118 52 / 0.18) 0%, transparent 70%)",
+                filter: "blur(25px)",
+              }}
             />
-          </div>
-        </div>
 
-        <div>
-          <p className="ornament-divider text-[10px] uppercase tracking-[0.3em]">About Doctor</p>
-          <h2 className="mt-4 font-serif text-4xl text-brown md:text-5xl">
-            Meet Dr. Soundarya — your partner in holistic healing.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            A qualified homoeopath and certified yoga therapist, Dr. Soundarya blends classical
-            homoeopathy with yoga and nutritional science to address the root cause of illness.
-            Every treatment plan is built around <em>you</em> — your constitution, lifestyle,
-            history and goals.
-          </p>
+            {/* Doctor Portrait Card */}
+            <div className="relative elevated-card rounded-[2rem] overflow-hidden border border-border/80 shadow-deep">
+              <div className="relative aspect-[4/5] overflow-hidden bg-card">
+                <img
+                  src={doctorPortrait}
+                  alt="Dr. Soundarya (B.H.M.S, D.Y.T) — Lead Homoeopathic Physician"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-102"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {pillars.map((p) => (
-              <li
-                key={p.title}
-                className="group flex gap-3 rounded-2xl border border-border bg-card/70 p-4 hover-lift"
-              >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-copper/10 text-copper">
-                  <p.icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="font-serif text-lg text-brown">{p.title}</p>
-                  <p className="text-xs text-muted-foreground">{p.text}</p>
+                {/* Verified badge overlaid on top */}
+                <div className="absolute top-4 right-4">
+                  <div className="glass-card rounded-full px-3.5 py-1.5 flex items-center gap-1.5 text-xs font-bold text-copper shadow-soft">
+                    <ShieldCheck className="h-4 w-4 text-copper" />
+                    <span>Board Certified</span>
+                  </div>
                 </div>
-              </li>
-            ))}
-          </ul>
 
-          <Link
-            to="/about"
-            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-copper"
-          >
-            Read full doctor profile
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Link>
+                {/* Doctor credentials overlaid at bottom of photo */}
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="text-[11px] font-bold text-amber-300 uppercase tracking-wider">
+                    Lead Homoeopathic Physician
+                  </p>
+                  <h3 className="font-display text-2xl font-bold tracking-tight text-white mt-0.5">
+                    {clinic.doctor}
+                  </h3>
+                  <p className="text-xs text-stone-200 mt-0.5 font-medium">
+                    {clinic.qualifications}
+                  </p>
+                  <p className="text-[11px] text-amber-200/90 font-mono mt-0.5">
+                    Reg. {clinic.registration.replace(/^Reg\.\s*No\.\s*/i, "")} · {clinic.council}
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Quick-Bar */}
+              <div className="p-3.5 bg-card flex items-center justify-between text-xs text-muted-foreground border-t border-border/60">
+                <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Accepting Patients
+                </span>
+                <span className="font-medium">Shadnagar Clinic &amp; Online</span>
+              </div>
+            </div>
+          </div>
+
+          {/* ─── RIGHT: Authentic Doctor Profile Matter (Clean, No Clutter) ─── */}
+          <div className="lg:col-span-7 animate-fade-up">
+
+            {/* Headline */}
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground text-balance leading-[1.12]">
+              Healing guided by listening,{" "}
+              <span className="gradient-text-copper">empathy &amp; clinical precision.</span>
+            </h2>
+
+            {/* Authentic, concise bio */}
+            <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              A qualified homoeopath and certified yoga therapist with over 9 years of clinical experience,{" "}
+              <strong className="text-foreground font-semibold">Dr.&nbsp;Soundarya (B.H.M.S, D.Y.T)</strong>{" "}
+              specializes in treating chronic and acute conditions by targeting internal root causes rather than masking symptoms with temporary chemicals.
+            </p>
+
+            {/* 3 Key Trust Highlights */}
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-copper/20 bg-copper/5 p-3.5 text-center">
+                <p className="font-display text-2xl font-bold text-copper">9+ Yrs</p>
+                <p className="text-xs text-muted-foreground font-medium mt-0.5">Clinical Practice</p>
+              </div>
+              <div className="rounded-2xl border border-olive/25 bg-olive/5 p-3.5 text-center">
+                <p className="font-display text-2xl font-bold text-olive dark:text-olive-soft">5,000+</p>
+                <p className="text-xs text-muted-foreground font-medium mt-0.5">Patients Healed</p>
+              </div>
+              <div className="rounded-2xl border border-copper/20 bg-copper/5 p-3.5 text-center">
+                <p className="font-display text-2xl font-bold text-foreground">100%</p>
+                <p className="text-xs text-muted-foreground font-medium mt-0.5">Non-Toxic &amp; Safe</p>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-3.5">
+              <Link to="/appointment" className="btn-primary">
+                <CalendarClock className="h-4 w-4" />
+                Schedule Consultation
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href={whatsappLink(defaultWhatsAppMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                <MessageCircle className="h-4 w-4 text-emerald-600" />
+                WhatsApp Dr. Soundarya
+              </a>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>

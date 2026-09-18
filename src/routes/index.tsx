@@ -4,7 +4,6 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { TreatmentsSection } from "@/components/sections/TreatmentsSection";
 import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { AppointmentSection } from "@/components/sections/AppointmentSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { BlogSection } from "@/components/sections/BlogSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { OnlineConsultationSection } from "@/components/sections/OnlineConsultationSection";
@@ -39,7 +38,6 @@ function Index() {
       <TreatmentsSection />
       <WhyChooseUsSection />
       <AppointmentSection />
-      <TestimonialsSection />
       <OnlineConsultationSection />
       <BlogSection />
       <FAQSection />

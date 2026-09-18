@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
+import { IntroPreloader } from "../components/IntroPreloader";
 
 function NotFoundComponent() {
   return (
@@ -108,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap",
       },
       {
         rel: "stylesheet",
@@ -123,10 +124,60 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    name: "Rudhra Homoeopathy Clinic",
+    description:
+      "Personalised constitutional homoeopathy, yoga therapy & clinical nutrition by Dr. Soundarya (B.H.M.S, D.Y.T).",
+    url: "https://rudhrahomoeopathy.com",
+    telephone: "+917995318298",
+    priceRange: "₹₹",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "NH44, Opp Bus Stop",
+      addressLocality: "Shadnagar",
+      postalCode: "509216",
+      addressRegion: "Telangana",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "17.0682",
+      longitude: "78.2045",
+    },
+    medicalSpecialty: ["Homeopathy", "HolisticMedicine"],
+    physician: {
+      "@type": "Physician",
+      name: "Dr. Soundarya",
+      jobTitle: "Lead Homoeopath & Certified Yoga Therapist",
+      qualifications: "B.H.M.S, D.Y.T",
+      medicalSpecialty: "Homeopathy",
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "10:00",
+        closes: "14:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "16:00",
+        closes: "19:30",
+      },
+    ],
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
       </head>
       <body>
         {children}
@@ -141,6 +192,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <IntroPreloader />
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
         <main className="flex-1">
