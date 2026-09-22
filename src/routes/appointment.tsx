@@ -22,10 +22,10 @@ export const Route = createFileRoute("/appointment")({
         property: "og:description",
         content: "Quick, hassle-free appointment booking for in-person or virtual homoeopathic consultation.",
       },
-      { property: "og:url", content: "https://a-clinic.vercel.app/appointment" },
-      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { property: "og:url", content: "https://rudhrahomoeopathy.com/appointment" },
+      { property: "og:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/appointment" }],
+    links: [{ rel: "canonical", href: "https://rudhrahomoeopathy.com/appointment" }],
   }),
   component: () => (
     <>

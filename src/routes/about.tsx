@@ -23,10 +23,10 @@ export const Route = createFileRoute("/about")({
         content:
           "Medical Registration 1972/H/2023. Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis (Success Rate 100%).",
       },
-      { property: "og:url", content: "https://a-clinic.vercel.app/about" },
-      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { property: "og:url", content: "https://rudhrahomoeopathy.com/about" },
+      { property: "og:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/about" }],
+    links: [{ rel: "canonical", href: "https://rudhrahomoeopathy.com/about" }],
   }),
   component: () => (
     <>

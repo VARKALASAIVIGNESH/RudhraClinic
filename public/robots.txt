@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a-clinic.vercel.app/sitemap.xml
+Sitemap: https://rudhrahomoeopathy.com/sitemap.xml

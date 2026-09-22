@@ -21,10 +21,10 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Find directions on Google Maps, call +91 79953 18298, or message directly on WhatsApp.",
       },
-      { property: "og:url", content: "https://a-clinic.vercel.app/contact" },
-      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { property: "og:url", content: "https://rudhrahomoeopathy.com/contact" },
+      { property: "og:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/contact" }],
+    links: [{ rel: "canonical", href: "https://rudhrahomoeopathy.com/contact" }],
   }),
   component: () => (
     <>

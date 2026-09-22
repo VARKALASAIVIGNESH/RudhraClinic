@@ -22,10 +22,10 @@ export const Route = createFileRoute("/treatments")({
         property: "og:description",
         content: "Root-cause homoeopathic care for 15+ acute and chronic conditions by Dr. Soundarya.",
       },
-      { property: "og:url", content: "https://a-clinic.vercel.app/treatments" },
-      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { property: "og:url", content: "https://rudhrahomoeopathy.com/treatments" },
+      { property: "og:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/treatments" }],
+    links: [{ rel: "canonical", href: "https://rudhrahomoeopathy.com/treatments" }],
   }),
   component: () => (
     <>

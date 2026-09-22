@@ -29,8 +29,8 @@ export const Route = createFileRoute("/")({
         content:
           "Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis (Success Rate 100%). Personalised Classical Homoeopathy, Therapeutic Yoga & Diet in Shadnagar.",
       },
-      { property: "og:url", content: "https://a-clinic.vercel.app" },
-      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { property: "og:url", content: "https://rudhrahomoeopathy.com" },
+      { property: "og:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Rudhra Homoeopathy Clinic — Dr. Soundarya | Shadnagar" },
       {
@@ -38,9 +38,9 @@ export const Route = createFileRoute("/")({
         content:
           "Top Homoeopathy Clinic in Shadnagar. Infertility, Asthma, Allergic Rhinitis, PCOD, Skin & Joint care.",
       },
-      { name: "twitter:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { name: "twitter:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app" }],
+    links: [{ rel: "canonical", href: "https://rudhrahomoeopathy.com" }],
   }),
   component: Index,
 });

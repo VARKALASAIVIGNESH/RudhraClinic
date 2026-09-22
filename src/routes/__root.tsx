@@ -106,8 +106,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Dr. Soundarya (Reg: 1972/H/2023) — Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis, PCOD, and chronic diseases. Personalized constitutional homoeopathy in Shadnagar.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://a-clinic.vercel.app" },
-      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { property: "og:url", content: "https://rudhrahomoeopathy.com" },
+      { property: "og:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
       { property: "og:image:alt", content: "Dr. Soundarya - Best Homoeopathy Doctor at Rudhra Clinic Shadnagar" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -117,13 +117,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: "Top Homoeopathy Clinic in Shadnagar. Specialist in Infertility, Asthma, Allergic Rhinitis, PCOD, Skin & Arthritis.",
       },
-      { name: "twitter:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { name: "twitter:image", content: "https://rudhrahomoeopathy.com/doctor-portrait.jpg" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "apple-touch-icon", href: "/logo.png" },
-      { rel: "canonical", href: "https://a-clinic.vercel.app" },
+      { rel: "canonical", href: "https://rudhrahomoeopathy.com" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
@@ -155,7 +155,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "@graph": [
       {
         "@type": ["MedicalClinic", "LocalBusiness"],
-        "@id": "https://a-clinic.vercel.app/#clinic",
+        "@id": "https://rudhrahomoeopathy.com/#clinic",
         name: "Rudhra Homoeopathy Clinic",
         alternateName: [
           "Dr. Soundarya Homoeopathy Clinic",
@@ -164,10 +164,10 @@ function RootShell({ children }: { children: ReactNode }) {
         ],
         description:
           "Best Homoeopathy Clinic in Shadnagar offering classical constitutional homoeopathy, therapeutic yoga, and nutritional care led by Dr. Soundarya (B.H.M.S, D.Y.T, Reg: 1972/H/2023). Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis, PCOD, and chronic diseases.",
-        url: "https://a-clinic.vercel.app",
+        url: "https://rudhrahomoeopathy.com",
         telephone: "+917995318298",
-        image: "https://a-clinic.vercel.app/doctor-portrait.jpg",
-        logo: "https://a-clinic.vercel.app/logo.png",
+        image: "https://rudhrahomoeopathy.com/doctor-portrait.jpg",
+        logo: "https://rudhrahomoeopathy.com/logo.png",
         priceRange: "₹₹",
         currenciesAccepted: "INR",
         paymentAccepted: "Cash, UPI, Google Pay, PhonePe, Paytm, Cards",
@@ -246,12 +246,12 @@ function RootShell({ children }: { children: ReactNode }) {
           }
         ],
         physician: {
-          "@id": "https://a-clinic.vercel.app/#doctor"
+          "@id": "https://rudhrahomoeopathy.com/#doctor"
         }
       },
       {
         "@type": "Physician",
-        "@id": "https://a-clinic.vercel.app/#doctor",
+        "@id": "https://rudhrahomoeopathy.com/#doctor",
         name: "Dr. Soundarya",
         honorificPrefix: "Dr.",
         jobTitle: "Senior Consultant Homoeopath & Certified Yoga Therapist",
@@ -261,10 +261,10 @@ function RootShell({ children }: { children: ReactNode }) {
           name: "Medical Registration Number",
           value: "1972/H/2023"
         },
-        image: "https://a-clinic.vercel.app/doctor-portrait.jpg",
+        image: "https://rudhrahomoeopathy.com/doctor-portrait.jpg",
         telephone: "+917995318298",
         worksFor: {
-          "@id": "https://a-clinic.vercel.app/#clinic"
+          "@id": "https://rudhrahomoeopathy.com/#clinic"
         },
         medicalSpecialty: [
           "Homeopathy",
@@ -283,7 +283,7 @@ function RootShell({ children }: { children: ReactNode }) {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://a-clinic.vercel.app/#faq",
+        "@id": "https://rudhrahomoeopathy.com/#faq",
         mainEntity: [
           {
             "@type": "Question",
