@@ -4,6 +4,7 @@ import {
   ShieldCheck,
   MessageCircle,
   CalendarClock,
+  Award,
 } from "lucide-react";
 import doctorPortrait from "@/assets/doctor-portrait.jpg";
 import { clinic, whatsappLink, defaultWhatsAppMessage } from "@/lib/clinic";
@@ -48,6 +49,9 @@ export function AboutSection() {
                   src={doctorPortrait}
                   alt="Dr. Soundarya (B.H.M.S, D.Y.T) — Lead Homoeopathic Physician"
                   className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-102"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/doctor-portrait.jpg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
 
@@ -116,6 +120,31 @@ export function AboutSection() {
               <div className="rounded-2xl border border-copper/20 bg-copper/5 p-3.5 text-center">
                 <p className="font-display text-2xl font-bold text-foreground">100%</p>
                 <p className="text-xs text-muted-foreground font-medium mt-0.5">Non-Toxic &amp; Safe</p>
+              </div>
+            </div>
+
+            {/* Clinical Specialization Highlight */}
+            <div className="mt-5 rounded-2xl border border-copper/35 bg-gradient-to-r from-copper/10 via-card to-copper/5 p-4 sm:p-5 shadow-soft">
+              <div className="flex items-start gap-3.5">
+                <div className="rounded-xl bg-copper/20 p-2.5 text-copper shrink-0">
+                  <Award className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs font-bold uppercase tracking-wider text-copper">
+                      Clinical Specialist Focus
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                      Success Rate 100%
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm sm:text-base font-semibold text-foreground">
+                    Infertility and gynaec, Asthma, allergic rhinitis treat specialist
+                  </p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    Registration No: {clinic.registrationNumber} · Classical constitutional cure &amp; holistic recovery
+                  </p>
+                </div>
               </div>
             </div>
 

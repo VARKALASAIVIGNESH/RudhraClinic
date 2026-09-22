@@ -2,8 +2,11 @@ export const clinic = {
   name: "Rudhra Homoeopathy Clinic",
   doctor: "Dr. Soundarya",
   qualifications: "B.H.M.S | D.Y.T",
-  registration: "Reg. No. TS-NCH/14829",
+  registration: "Reg. No. 1972/H/2023",
+  registrationNumber: "1972/H/2023",
   council: "Board of Homoeopathic Medical Examination & NCH",
+  specialization: "Infertility & Gynaec, Asthma, Allergic Rhinitis Treatment Specialist",
+  specializationHighlight: "Infertility and gynaec, Asthma, allergic rhinitis treat specialist (Success Rate 100%)",
   tagline: "Personalised Healing Through Homoeopathy, Yoga & Diet.",
   address: "NH44, Opp Bus Stop, Shadnagar – 509216",
   email: "rudhrahomoeopathyclinic@gmail.com",
@@ -13,7 +16,8 @@ export const clinic = {
   whatsappNumber: "917995318298",
   phone: "7995318298",
   phoneDisplay: "+91 79953 18298",
-  googleMapsUrl: "https://maps.app.goo.gl/HAURXdssDM6JKWc56",
+  googleMapsUrl: "https://maps.app.goo.gl/Kj5yC84yzWyVYJaH8",
+  googleMapsEmbed: "https://www.google.com/maps?q=17.0673828,78.2055206&hl=en&z=17&output=embed",
   disclaimer:
     "Rudhra Homoeopathy Clinic provides outpatient, holistic constitutional healthcare. In case of acute medical emergencies, severe chest pain, breathlessness, or trauma, please visit the nearest hospital emergency room or dial emergency services (108 in India) immediately.",
 };

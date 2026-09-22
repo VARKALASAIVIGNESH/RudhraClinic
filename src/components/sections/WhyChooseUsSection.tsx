@@ -1,5 +1,7 @@
-import { ShieldCheck, Leaf, Stethoscope, ArrowRight, CheckCircle2, MessageCircle, Sparkles } from "lucide-react";
+import { ShieldCheck, Leaf, Stethoscope, ArrowRight, CheckCircle2, MessageCircle, Sparkles, Award } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import doctorPortrait from "@/assets/doctor-portrait.jpg";
+import { clinic } from "@/lib/clinic";
 
 const distinctions = [
   {
@@ -66,14 +68,17 @@ export function WhyChooseUsSection() {
 
             {/* Authentic Doctor Consultation Spotlight */}
             <div className="mt-8 rounded-2xl border border-border/80 bg-card p-5 sm:p-6 shadow-soft transition-all duration-300 hover:shadow-deep hover:border-copper/30">
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
                 <img
-                  src="/src/assets/doctor-portrait.jpg"
+                  src={doctorPortrait}
                   alt="Dr. Soundarya"
-                  className="h-16 w-16 rounded-2xl object-cover border-2 border-copper/30 shadow-md shrink-0"
+                  className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl object-cover border-2 border-copper/30 shadow-md shrink-0"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/doctor-portrait.jpg";
+                  }}
                 />
-                <div>
-                  <div className="flex items-center gap-2">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <h3 className="font-display text-base sm:text-lg font-bold text-foreground">
                       Dr. Soundarya
                     </h3>
@@ -81,8 +86,11 @@ export function WhyChooseUsSection() {
                       Chief Physician
                     </span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    B.H.M.S, D.Y.T · Homoeopathy & Yoga Therapy
+                  <p className="text-xs text-muted-foreground mt-0.5 font-medium">
+                    B.H.M.S, D.Y.T · Homoeopathy &amp; Yoga Therapy
+                  </p>
+                  <p className="text-[11px] font-semibold text-copper mt-0.5 font-mono">
+                    Registration No: {clinic.registrationNumber}
                   </p>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-[11px] font-semibold text-olive dark:text-olive-soft">
                     <span className="inline-flex items-center gap-1">
@@ -95,9 +103,25 @@ export function WhyChooseUsSection() {
                 </div>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-border/60 flex items-center justify-between">
+              {/* Specialization Highlight Callout */}
+              <div className="mt-4 rounded-xl border border-copper/30 bg-copper/10 p-3 text-xs leading-relaxed">
+                <div className="flex items-start gap-2">
+                  <Award className="h-4 w-4 text-copper shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-bold text-foreground">Specialist:</span>{" "}
+                    <span className="text-foreground/90 font-medium">
+                      Infertility and gynaec, Asthma, allergic rhinitis treat specialist
+                    </span>{" "}
+                    <span className="inline-block font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded-md text-[11px] ml-1">
+                      Success Rate 100%
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3.5 border-t border-border/60 flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">
-                  Shadnagar Clinic & Telehealth
+                  Shadnagar Clinic &amp; Telehealth
                 </span>
                 <Link
                   to="/appointment"

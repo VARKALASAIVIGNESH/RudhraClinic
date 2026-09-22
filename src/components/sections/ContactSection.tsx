@@ -141,7 +141,7 @@ export function ContactSection() {
             </div>
             <iframe
               title="Rudhra Homoeopathy Clinic location in Shadnagar"
-              src="https://www.google.com/maps?q=RUDHRA+HOMOEOPATHY+CLINIC+SHADNAGAR&output=embed"
+              src={clinic.googleMapsEmbed}
               width="100%"
               height="100%"
               loading="lazy"
