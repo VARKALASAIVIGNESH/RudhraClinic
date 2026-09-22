@@ -12,18 +12,18 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya (B.H.M.S) — Rudhra Clinic" },
+      { title: "Rudhra Homoeopathy Clinic — Best Homoeopathy Care in Shadnagar | Dr. Soundarya" },
       {
         name: "description",
         content:
-          "Best Homoeopathy Clinic in Shadnagar. Dr. Soundarya (B.H.M.S, D.Y.T, Reg: 1972/H/2023) specializes in Infertility & Gynaec, Asthma, Allergic Rhinitis, PCOD, Thyroid, Skin & Arthritis. 100% root-cause healing. Book consultation now.",
+          "Rudhra Homoeopathy Clinic in Shadnagar. Dr. Soundarya (B.H.M.S, D.Y.T, Reg: 1972/H/2023) specializes in Infertility & Gynaec, Asthma, Allergic Rhinitis, PCOD, Thyroid, Skin & Arthritis. 100% root-cause healing. Book consultation now.",
       },
       {
         name: "keywords",
         content:
-          "Best Homoeopathy Clinic in Shadnagar, Homoeopathy Doctor in Shadnagar, Dr Soundarya Homoeopath, Infertility Specialist Shadnagar, Asthma Doctor Shadnagar, Allergic Rhinitis Doctor Shadnagar, PCOD Homoeopathy, Rudhra Clinic Shadnagar",
+          "Rudhra Homoeopathy Clinic, Best Homoeopathy Clinic in Shadnagar, Homoeopathy Doctor in Shadnagar, Dr Soundarya Homoeopath, Infertility Specialist Shadnagar, Asthma Doctor Shadnagar, Allergic Rhinitis Doctor Shadnagar, PCOD Homoeopathy, Rudhra Clinic Shadnagar",
       },
-      { property: "og:title", content: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya (B.H.M.S)" },
+      { property: "og:title", content: "Rudhra Homoeopathy Clinic — Best Homoeopathy in Shadnagar" },
       {
         property: "og:description",
         content:
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://a-clinic.vercel.app" },
       { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya" },
+      { name: "twitter:title", content: "Rudhra Homoeopathy Clinic — Dr. Soundarya | Shadnagar" },
       {
         name: "twitter:description",
         content:

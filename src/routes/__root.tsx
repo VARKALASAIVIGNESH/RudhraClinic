@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya (B.H.M.S) — Rudhra Clinic" },
+      { title: "Rudhra Homoeopathy Clinic — Best Homoeopathy in Shadnagar | Dr. Soundarya" },
       {
         name: "description",
         content:
@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "Best Homoeopathy Clinic in Shadnagar, Homoeopathy Doctor in Shadnagar, Dr Soundarya Homoeopath, Infertility Specialist Shadnagar, Asthma Doctor Shadnagar, Allergic Rhinitis Treatment Shadnagar, PCOD Homoeopathy, Arthritis Treatment Shadnagar, Rudhra Homoeopathy Clinic",
+          "Rudhra Homoeopathy Clinic, Best Homoeopathy Clinic in Shadnagar, Homoeopathy Doctor in Shadnagar, Dr Soundarya Homoeopath, Infertility Specialist Shadnagar, Asthma Doctor Shadnagar, Allergic Rhinitis Treatment Shadnagar, PCOD Homoeopathy, Arthritis Treatment Shadnagar",
       },
       { name: "author", content: "Dr. Soundarya (B.H.M.S, D.Y.T)" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "ICBM", content: "17.0673828, 78.2055206" },
       { property: "og:locale", content: "en_IN" },
       { property: "og:site_name", content: "Rudhra Homoeopathy Clinic" },
-      { property: "og:title", content: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya (B.H.M.S)" },
+      { property: "og:title", content: "Rudhra Homoeopathy Clinic — Best Homoeopathy in Shadnagar" },
       {
         property: "og:description",
         content: "Dr. Soundarya (Reg: 1972/H/2023) — Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis, PCOD, and chronic diseases. Personalized constitutional homoeopathy in Shadnagar.",
@@ -333,6 +333,9 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <HeadContent />
         <script
           type="application/ld+json"
