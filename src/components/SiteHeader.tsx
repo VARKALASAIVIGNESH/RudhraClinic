@@ -71,12 +71,22 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8 gap-6">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-          <img
-            src="/logo.png"
-            alt="Rudhra Homoeopathy Clinic Logo"
-            className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-          />
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
+          <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-white p-1 shadow-sm ring-1 ring-stone-200/70 dark:ring-stone-700/60 overflow-hidden shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <img
+              src="/logo.png"
+              alt="Rudhra Homoeopathy Clinic Logo"
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display text-base sm:text-lg font-bold tracking-tight text-foreground leading-tight group-hover:text-copper transition-colors">
+              Rudhra <span className="text-copper">Homoeopathy</span>
+            </span>
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
+              Clinic · Dr. Soundarya
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation — centered */}

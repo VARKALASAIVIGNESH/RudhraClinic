@@ -59,8 +59,17 @@ export function IntroPreloader() {
         <div className="absolute top-[40%] right-[35%] w-80 h-80 rounded-full bg-copper/20 blur-3xl" />
       </div>
 
-      {/* Main Typography Centerpiece (No Logo, Increased Font Sizes) */}
+      {/* Main Typography Centerpiece with Logo Emblem */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl">
+        {/* Emblem Logo */}
+        <div className="mb-4 sm:mb-6 h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-white p-2 shadow-[0_0_30px_rgba(212,130,70,0.4)] ring-2 ring-copper/40 flex items-center justify-center overflow-hidden">
+          <img
+            src="/logo.png"
+            alt="Rudhra Homoeopathy Clinic Emblem"
+            className="h-full w-full object-contain"
+          />
+        </div>
+
         {/* Massive, Grand Brand Title */}
         <h1 className="font-sans text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-[0.24em] text-white uppercase leading-none drop-shadow-[0_0_40px_rgba(212,130,70,0.35)]">
           RUDHRA

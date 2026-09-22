@@ -120,6 +120,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", href: "/logo.png" },
       { rel: "canonical", href: "https://a-clinic.vercel.app" },
       {
         rel: "preconnect",

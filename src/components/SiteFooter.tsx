@@ -29,12 +29,22 @@ export function SiteFooter() {
         {/* Main Grid */}
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 group">
-              <img
-                src="/logo.png"
-                alt="Rudhra Homoeopathy Clinic Logo"
-                className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              />
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="h-14 w-14 rounded-2xl bg-white p-1.5 shadow-sm ring-1 ring-stone-200/70 dark:ring-stone-700/60 overflow-hidden shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="/logo.png"
+                  alt="Rudhra Homoeopathy Clinic Logo"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-lg font-bold tracking-tight text-foreground leading-tight">
+                  Rudhra <span className="text-copper">Homoeopathy</span>
+                </span>
+                <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                  Dr. Soundarya (B.H.M.S)
+                </span>
+              </div>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {clinic.tagline}
