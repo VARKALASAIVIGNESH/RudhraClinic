@@ -5,13 +5,26 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Rudhra Homoeopathy Clinic, Shadnagar" },
-      { name: "description", content: "Visit Rudhra Homoeopathy Clinic at NH44, Opp Bus Stop, Shadnagar – 509216. Open 10AM–2PM & 4PM–7:30PM." },
-      { property: "og:title", content: "Contact Rudhra Homoeopathy Clinic" },
-      { property: "og:description", content: "Find us in Shadnagar or reach out via WhatsApp, email and Instagram." },
-      { property: "og:url", content: "/contact" },
+      { title: "Contact Rudhra Homoeopathy Clinic Shadnagar | Location, Phone & Timings" },
+      {
+        name: "description",
+        content:
+          "Visit Rudhra Homoeopathy Clinic near Bus Stand, Mahabubnagar Road, Shadnagar 509216. Led by Dr. Soundarya (B.H.M.S). Open Mon-Sat 10AM-2PM & 4PM-7:30PM. Call +91 79953 18298.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Rudhra Homoeopathy Clinic location, Homoeopathy clinic near me Shadnagar, Dr Soundarya clinic address, Shadnagar homoeopathy phone number",
+      },
+      { property: "og:title", content: "Contact Rudhra Homoeopathy Clinic — Shadnagar, Telangana" },
+      {
+        property: "og:description",
+        content: "Find directions on Google Maps, call +91 79953 18298, or message directly on WhatsApp.",
+      },
+      { property: "og:url", content: "https://a-clinic.vercel.app/contact" },
+      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/contact" }],
   }),
   component: () => (
     <>

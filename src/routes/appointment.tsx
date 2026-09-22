@@ -6,13 +6,26 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const Route = createFileRoute("/appointment")({
   head: () => ({
     meta: [
-      { title: "Book Appointment — Rudhra Homoeopathy Clinic" },
-      { name: "description", content: "Book a consultation with Dr. Soundarya at Rudhra Homoeopathy Clinic, Shadnagar. Form submission opens WhatsApp with your details prefilled." },
-      { property: "og:title", content: "Book Appointment — Rudhra Homoeopathy Clinic" },
-      { property: "og:description", content: "Personalised consultation, quick to book via WhatsApp." },
-      { property: "og:url", content: "/appointment" },
+      { title: "Book Consultation with Dr. Soundarya | Homoeopathy Clinic Shadnagar" },
+      {
+        name: "description",
+        content:
+          "Book your clinical or online consultation with Dr. Soundarya (B.H.M.S, Reg: 1972/H/2023) at Rudhra Homoeopathy Clinic, Shadnagar. Instant WhatsApp confirmation.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Book homoeopathy appointment Shadnagar, Dr Soundarya consultation, Rudhra clinic booking, homoeopath appointment Telangana",
+      },
+      { property: "og:title", content: "Book Consultation with Dr. Soundarya — Rudhra Clinic" },
+      {
+        property: "og:description",
+        content: "Quick, hassle-free appointment booking for in-person or virtual homoeopathic consultation.",
+      },
+      { property: "og:url", content: "https://a-clinic.vercel.app/appointment" },
+      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/appointment" }],
+    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/appointment" }],
   }),
   component: () => (
     <>

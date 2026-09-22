@@ -12,20 +12,35 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rudhra Homoeopathy Clinic — Holistic Healing in Shadnagar" },
+      { title: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya (B.H.M.S) — Rudhra Clinic" },
       {
         name: "description",
         content:
-          "Personalised homoeopathy, yoga & diet by Dr. Soundarya (B.H.M.S, D.Y.T). Treating PCOD, thyroid, asthma, skin, arthritis & more. Book an appointment today.",
+          "Best Homoeopathy Clinic in Shadnagar. Dr. Soundarya (B.H.M.S, D.Y.T, Reg: 1972/H/2023) specializes in Infertility & Gynaec, Asthma, Allergic Rhinitis, PCOD, Thyroid, Skin & Arthritis. 100% root-cause healing. Book consultation now.",
       },
-      { property: "og:title", content: "Rudhra Homoeopathy Clinic — Holistic Healing" },
+      {
+        name: "keywords",
+        content:
+          "Best Homoeopathy Clinic in Shadnagar, Homoeopathy Doctor in Shadnagar, Dr Soundarya Homoeopath, Infertility Specialist Shadnagar, Asthma Doctor Shadnagar, Allergic Rhinitis Doctor Shadnagar, PCOD Homoeopathy, Rudhra Clinic Shadnagar",
+      },
+      { property: "og:title", content: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya (B.H.M.S)" },
       {
         property: "og:description",
-        content: "Personalised Healing Through Homoeopathy, Yoga & Diet.",
+        content:
+          "Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis (Success Rate 100%). Personalised Classical Homoeopathy, Therapeutic Yoga & Diet in Shadnagar.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://a-clinic.vercel.app" },
+      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Best Homoeopathy Clinic in Shadnagar | Dr. Soundarya" },
+      {
+        name: "twitter:description",
+        content:
+          "Top Homoeopathy Clinic in Shadnagar. Infertility, Asthma, Allergic Rhinitis, PCOD, Skin & Joint care.",
+      },
+      { name: "twitter:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app" }],
   }),
   component: Index,
 });

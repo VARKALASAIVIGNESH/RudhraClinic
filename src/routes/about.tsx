@@ -6,13 +6,27 @@ import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Dr. Soundarya — Rudhra Homoeopathy Clinic" },
-      { name: "description", content: "Meet Dr. Soundarya (B.H.M.S, D.Y.T), founder of Rudhra Homoeopathy Clinic — blending classical homoeopathy with yoga and diet." },
-      { property: "og:title", content: "About Dr. Soundarya — Rudhra Homoeopathy Clinic" },
-      { property: "og:description", content: "Holistic, patient-centered care from a qualified homoeopath and yoga therapist." },
-      { property: "og:url", content: "/about" },
+      { title: "Dr. Soundarya (B.H.M.S, D.Y.T) | Best Homoeopath in Shadnagar — Rudhra Clinic" },
+      {
+        name: "description",
+        content:
+          "Meet Dr. Soundarya (B.H.M.S, D.Y.T, Reg: 1972/H/2023), Lead Physician at Rudhra Homoeopathy Clinic, Shadnagar. Specialist in Infertility & Gynaec, Asthma, and Allergic Rhinitis.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Dr Soundarya Homoeopath, Homoeopathy Doctor Shadnagar, Infertility Specialist Shadnagar, Asthma Doctor Shadnagar, Rudhra Clinic Founder",
+      },
+      { property: "og:title", content: "Dr. Soundarya (B.H.M.S) — Rudhra Homoeopathy Clinic, Shadnagar" },
+      {
+        property: "og:description",
+        content:
+          "Medical Registration 1972/H/2023. Specialist in Infertility & Gynaec, Asthma, Allergic Rhinitis (Success Rate 100%).",
+      },
+      { property: "og:url", content: "https://a-clinic.vercel.app/about" },
+      { property: "og:image", content: "https://a-clinic.vercel.app/doctor-portrait.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://a-clinic.vercel.app/about" }],
   }),
   component: () => (
     <>
