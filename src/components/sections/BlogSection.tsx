@@ -7,6 +7,7 @@ interface Article {
   title: string;
   excerpt: string;
   read: string;
+  image: string;
   content: string[];
   takeaways: string[];
   icon: React.ElementType;
@@ -20,6 +21,7 @@ const articles: Article[] = [
     title: "Understanding PCOD: A Holistic Roadmap",
     excerpt: "Why hormones go out of rhythm — and how constitutional homoeopathy, yoga and diet restore natural ovulation.",
     read: "6 min",
+    image: "/blog/pcod-womens-health.jpg",
     icon: Heart,
     gradient: "from-rose-400/80 to-copper/70",
     accent: "bg-rose-50 dark:bg-rose-950/30 border-rose-200/60 dark:border-rose-800/40",
@@ -39,6 +41,7 @@ const articles: Article[] = [
     title: "What Makes a Remedy 'Constitutional'?",
     excerpt: "A primer on classical case-taking and why one carefully selected remedy can resolve diverse symptoms.",
     read: "5 min",
+    image: "/blog/constitutional-homoeopathy.jpg",
     icon: FlaskConical,
     gradient: "from-copper/80 to-amber-400/70",
     accent: "bg-amber-50 dark:bg-amber-950/30 border-amber-200/60 dark:border-amber-800/40",
@@ -58,6 +61,7 @@ const articles: Article[] = [
     title: "Eating for Hormonal & Metabolic Harmony",
     excerpt: "Fundamental dietary principles that accelerate your homoeopathic recovery and reduce inflammation.",
     read: "7 min",
+    image: "/blog/clinical-nutrition.jpg",
     icon: Utensils,
     gradient: "from-olive/80 to-emerald-400/70",
     accent: "bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200/60 dark:border-emerald-800/40",
@@ -77,6 +81,7 @@ const articles: Article[] = [
     title: "5 Pranayama Practices for Asthma & Sinusitis",
     excerpt: "Daily therapeutic breathwork routines that expand vital lung capacity and soothe hyperactive airways.",
     read: "4 min",
+    image: "/blog/pranayama-asthma.jpg",
     icon: Wind,
     gradient: "from-sky-400/80 to-olive/70",
     accent: "bg-sky-50 dark:bg-sky-950/30 border-sky-200/60 dark:border-sky-800/40",
@@ -96,6 +101,7 @@ const articles: Article[] = [
     title: "Living Well with Thyroid & Autoimmune Disorders",
     excerpt: "Strategic lifestyle anchors that stabilize metabolic energy, weight, and thyroid hormone synthesis.",
     read: "6 min",
+    image: "/blog/thyroid-care.jpg",
     icon: Leaf,
     gradient: "from-teal-400/80 to-copper/60",
     accent: "bg-teal-50 dark:bg-teal-950/30 border-teal-200/60 dark:border-teal-800/40",
@@ -115,6 +121,7 @@ const articles: Article[] = [
     title: "Sleep, Stress & the Healing Nervous System",
     excerpt: "The overlooked biological pillars that dictate how rapidly your body repairs from illness.",
     read: "5 min",
+    image: "/blog/sleep-nervous-system.jpg",
     icon: Moon,
     gradient: "from-violet-400/80 to-indigo-400/70",
     accent: "bg-violet-50 dark:bg-violet-950/30 border-violet-200/60 dark:border-violet-800/40",
@@ -153,7 +160,7 @@ export function BlogSection() {
         </div>
 
         {/* Articles Grid */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((a) => {
             const Icon = a.icon;
             return (
@@ -162,29 +169,35 @@ export function BlogSection() {
                 onClick={() => setSelectedArticle(a)}
                 className="group cursor-pointer overflow-hidden rounded-2xl bg-card border border-border shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-deep hover:border-copper/20 flex flex-col"
               >
-                {/* Colorful visual header */}
-                <div className={`relative h-28 bg-gradient-to-br ${a.gradient} flex items-end p-4`}>
-                  {/* Pattern overlay */}
-                  <div className="absolute inset-0 opacity-20" style={{
-                    backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-                  }} />
-                  {/* Icon */}
-                  <div className="relative z-10 grid h-10 w-10 place-items-center rounded-xl bg-white/20 backdrop-blur border border-white/30 text-white">
-                    <Icon className="h-5 w-5" />
+                {/* Real authentic photograph header */}
+                <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {/* Subtle dark gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+
+                  {/* Floating category badge with icon */}
+                  <div className="absolute top-3 left-3">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm border border-white/20">
+                      <Icon className="h-3.5 w-3.5 text-amber-300" />
+                      {a.cat}
+                    </span>
                   </div>
-                  {/* Read time */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/20 backdrop-blur px-2.5 py-1 text-[10px] font-semibold text-white">
-                    <Clock className="h-3 w-3" />
+
+                  {/* Read time pill */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-black/65 backdrop-blur-md px-2.5 py-1 text-[11px] font-semibold text-white border border-white/15">
+                    <Clock className="h-3 w-3 text-amber-300" />
                     {a.read}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-5">
-                  <span className="inline-flex self-start rounded-full bg-olive/10 border border-olive/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-olive dark:text-olive-soft">
-                    {a.cat}
-                  </span>
-                  <h3 className="mt-3 font-display text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-copper transition-colors">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-copper transition-colors">
                     {a.title}
                   </h3>
                   <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-2 flex-1">
@@ -239,6 +252,15 @@ export function BlogSection() {
               >
                 <X className="h-4 w-4" />
               </button>
+            </div>
+
+            {/* Featured image inside modal */}
+            <div className="mt-4 relative h-48 sm:h-60 w-full overflow-hidden rounded-2xl border border-border/50">
+              <img
+                src={selectedArticle.image}
+                alt={selectedArticle.title}
+                className="h-full w-full object-cover object-center"
+              />
             </div>
 
             <div className="mt-6 border-t border-border/60 pt-5 space-y-4 text-sm leading-relaxed text-foreground/90">
